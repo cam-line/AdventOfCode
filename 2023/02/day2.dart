@@ -1,10 +1,11 @@
+import 'dart:math';
+
 import '../Utils/dartUtils.dart';
 
 void main(){
   bool runP1 = true;
-  bool runP2 = false;
-  int solutionP1 = 0;
-  String solutionP2 = "";
+  bool runP2 = true;
+  int solutionP1, solutionP2;
 
   var demoInput = parseInput(Utils.readToString("./demo-input.txt"));
   Stopwatch stopwatch = new Stopwatch()..start();
@@ -76,6 +77,17 @@ int solvePart1(List<Game> input) {
   return total;
 }
 
-String solvePart2(Object input) {
-  return "";
+int solvePart2(List<Game> input) {
+  int total = 0;
+  input.forEach((game) {
+    int maxRed = 0, maxBlue = 0, maxGreen = 0;
+    game.hands.forEach((hand) {
+      maxRed = max(hand.redCount, maxRed);
+      maxBlue = max(hand.blueCount, maxBlue);
+      maxGreen = max(hand.greenCount, maxGreen);
+    });
+    int power = maxRed * maxBlue * maxGreen;
+    total += power;
+  });
+  return total;
 }
