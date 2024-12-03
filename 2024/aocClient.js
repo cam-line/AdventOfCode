@@ -7,7 +7,6 @@ const client = new AocClient({
 });
 
 async function fetchInput(day) {
-    client.day = day;
     const input = await client.getInput(day);
     return input;
 }

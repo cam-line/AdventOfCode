@@ -46,7 +46,6 @@ async function main() {
     const lines = input.split('\n');
     const [list1, list2] = getLists(lines);
 
-    part2(list1, list2);
     await aocClient.submit(1, part1(list1, list2));
     await aocClient.submit(2, part2(list1, list2));
 }
