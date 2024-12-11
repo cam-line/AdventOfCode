@@ -1,4 +1,6 @@
 const aocClient = require('../aocClient');
+const path = require('path');
+const fs = require('fs');
 
 const part1 = (input) => {
 
@@ -17,5 +19,6 @@ async function main() {
 
     // await aocClient.submit(1, part1());
     // await aocClient.submit(2, part2());
+    process.exit();
 }
 main();
